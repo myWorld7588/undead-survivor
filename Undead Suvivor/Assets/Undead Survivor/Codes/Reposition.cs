@@ -17,15 +17,19 @@ public class Reposition : MonoBehaviour
 
         Vector3 playerDir = GameManager.instance.player.inputVec;
 
+        float dirX = playerDir.x < 0 ? -1 : 1;
+        float dirY = playerDir.y < 0 ? -1 : 1;
+
+
         switch (transform.tag) {
             case "Ground":
                 if (diffX > diffY)
                 {
-                    transform.Translate(Vector3.right * 40);
+                    transform.Translate(Vector3.right * dirX * 40);
                 }
-                else if (diffX > diffY)
+                else if (diffX < diffY)
                 {
-                    transform.Translate(Vector3.up * 40);
+                    transform.Translate(Vector3.up * dirY * 40);
                 }
                 break;
             case "Enemy":

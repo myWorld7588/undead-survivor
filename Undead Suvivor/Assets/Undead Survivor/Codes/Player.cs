@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-   
 
     private void FixedUpdate()
     {
